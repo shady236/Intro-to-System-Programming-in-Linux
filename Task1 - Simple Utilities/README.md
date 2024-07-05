@@ -86,4 +86,3 @@ Another example of compiling & usage:
 
 Output: On success, nothing is printed on screen, a new file with name sample1.txt (same as original file name) will be created within the directory /home/shady/ if it wasn't exsist, and it will hold the same content of sample1.txt (original file). Then sample1.txt (original file) is removed.
 On failure, an appropriate message is displayed to stderr.
-
