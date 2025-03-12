@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
 		int srcNameLen = srcLen - srcNameIdx;
 		dst = malloc(dstLen + srcNameLen + 2);
 		strcpy(dst, argv[2]);
-		strcat(dst, "/");
+		// strcat(dst, "/");
 		strcat(dst, src + srcNameIdx);
 	}
 
@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 		return SRC_OPEN_ERR;
 	}
 
-	int dstFd = open(dst, O_WRONLY | O_CREAT);
+	int dstFd = open(dst, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (dstFd == -1) {
 		fprintf(stderr, "destenation file %s can't be opened\n", dst);
 		return DST_OPEN_ERR;
@@ -91,4 +91,3 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
-
